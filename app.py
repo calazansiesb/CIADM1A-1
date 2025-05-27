@@ -6,7 +6,7 @@ import os
 # Caminho relativo ao arquivo CSV dentro do projeto
 caminho_arquivo = os.path.join("medias", "medias_mensais_2020_v2.csv")
 
-st.title("Médias Mensais - Visualização de Dados 2020")
+st.title("Médias Mensais - Visualização de Dados 2020 Ana e Igor")
 
 try:
     # Ler o arquivo CSV
