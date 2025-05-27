@@ -6,7 +6,7 @@ import os
 # Caminho relativo ao arquivo CSV dentro do projeto
 caminho_arquivo_unificado = os.path.join("medias", "medias_mensais_geo_temp_media_completo.csv")
 
-st.title("Médias Mensais Regionais (2020-2025) - Facetado por Região e Variável")
+st.title("Médias Mensais Regionais (2020-2025) - Visualização por Região e Variável")
 
 try:
     # Ler o arquivo unificado
@@ -16,6 +16,9 @@ try:
     regioes = sorted(df_unificado['Regiao'].unique())
     anos = sorted(df_unificado['Ano'].unique())
     meses = sorted(df_unificado['Mês'].unique())
+
+    # Seleção interativa da região
+    regiao_selecionada = st.selectbox("Selecione a região para visualizar:", regioes)
 
     # Variáveis a serem plotadas
     variaveis = {
@@ -29,36 +32,26 @@ try:
     coluna_var = variaveis[nome_var]
 
     # Cores para os anos
-    import numpy as np
     from matplotlib.cm import get_cmap
     cmap = get_cmap('viridis')
     cores_anos = {ano: cmap(i / len(anos)) for i, ano in enumerate(anos)}
 
-    # Gráfico facetado por região
-    st.subheader(f"Média Mensal de {nome_var} por Região (2020-2025)")
-    fig, axes = plt.subplots(nrows=1, ncols=len(regioes), figsize=(5*len(regioes), 5), sharey=True)
-    if len(regioes) == 1:
-        axes = [axes]  # Garante iterabilidade se só uma região
+    # Filtra o DataFrame para a região selecionada
+    df_regiao = df_unificado[df_unificado['Regiao'] == regiao_selecionada]
 
-    for i, regiao in enumerate(regioes):
-        ax = axes[i]
-        df_regiao = df_unificado[df_unificado['Regiao'] == regiao]
-        for ano in anos:
-            df_ano_regiao = df_regiao[df_regiao['Ano'] == ano].groupby('Mês')[coluna_var].mean().reindex(meses)
-            if not df_ano_regiao.empty:
-                ax.plot(meses, df_ano_regiao.values, marker='o', linestyle='-', color=cores_anos[ano], label=str(ano))
-        ax.set_title(regiao)
-        ax.set_xlabel('Mês')
-        if i == 0:
-            ax.set_ylabel(nome_var)
-        ax.set_xticks(meses)
-        ax.grid(True)
-
-    # Adicionar legenda fora dos subplots
-    handles, labels = axes[-1].get_legend_handles_labels()
-    fig.legend(handles, labels, title='Ano', loc='upper right', bbox_to_anchor=(1.05, 1))
-
-    plt.tight_layout(rect=[0, 0, 0.95, 1])
+    st.subheader(f"Média Mensal de {nome_var} na Região {regiao_selecionada} (2020-2025)")
+    fig, ax = plt.subplots(figsize=(8, 5))
+    for ano in anos:
+        df_ano_regiao = df_regiao[df_regiao['Ano'] == ano].groupby('Mês')[coluna_var].mean().reindex(meses)
+        if not df_ano_regiao.empty:
+            ax.plot(meses, df_ano_regiao.values, marker='o', linestyle='-', color=cores_anos[ano], label=str(ano))
+    ax.set_title(f'Média Mensal de {nome_var} - {regiao_selecionada} (2020-2025)')
+    ax.set_xlabel('Mês')
+    ax.set_ylabel(nome_var)
+    ax.set_xticks(meses)
+    ax.grid(True)
+    ax.legend(title='Ano')
+    plt.tight_layout()
     st.pyplot(fig)
 
 except FileNotFoundError:
