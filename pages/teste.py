@@ -6,7 +6,7 @@ import os
 # Caminho relativo ao arquivo CSV dentro do projeto
 caminho_arquivo_unificado = os.path.join("medias", "medias_mensais_geo_temp_media_completo.csv")
 
-st.title("Médias Mensais por Estado (2020-2025)")
+st.title("Médias Mensais por Estado (2020-2025) diego")
 
 try:
     # Ler o arquivo unificado
