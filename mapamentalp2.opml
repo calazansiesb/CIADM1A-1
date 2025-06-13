@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Revisão P2 Inteligência Artificial</title>
+  </head>
+  <body>
+    <outline text="1. Raciocínio Baseado em Casos (RBC)">
+      <outline text="Definição e Abordagem"/>
+      <outline text="Exemplos de Aplicação">
+        <outline text="Médico"/>
+        <outline text="Profissional jurídico"/>
+        <outline text="Programadores"/>
+      </outline>
+      <outline text="Representação de um Caso"/>
+      <outline text="Ciclo de RBC (4 Rs)">
+        <outline text="RECUPERAR"/>
+        <outline text="REUTILIZAR"/>
+        <outline text="REVISAR"/>
+        <outline text="RETER"/>
+      </outline>
+    </outline>
+    <outline text="2. Desenvolvimento de um Sistema RBC">
+      <outline text="Etapas Importantes"/>
+      <outline text="Casos (Aquisição do conhecimento)"/>
+      <outline text="Indexação"/>
+      <outline text="Recuperação de Casos (Similaridade)"/>
+      <outline text="Adaptação de Casos - Reutilização"/>
+      <outline text="Aprendizagem"/>
+      <outline text="Desvantagens"/>
+      <outline text="Quando usar RBC?"/>
+    </outline>
+    <outline text="3. Busca em Espaços de Estados">
+      <outline text="Definição e Objetivo"/>
+      <outline text="Componentes Detalhados">
+        <outline text="Estado (State)"/>
+        <outline text="Espaço de Estados (State Space)"/>
+        <outline text="Ação (Action) / Operador"/>
+        <outline text="Estado Inicial (Initial State)"/>
+        <outline text="Estado Objetivo (Goal State)"/>
+        <outline text="Custo da Ação (Action Cost)"/>
+      </outline>
+      <outline text="Processo de Busca"/>
+      <outline text="Exemplos de Algoritmos de Busca">
+        <outline text="Buscas Cegas (Uninformed Search)">
+          <outline text="Busca em Largura (BFS)"/>
+          <outline text="Busca em Profundidade (DFS)"/>
+        </outline>
+        <outline text="Buscas Informadas (Informed Search) / Heurísticas">
+          <outline text="Busca Gulosa (Greedy Best-First Search)"/>
+          <outline text="Busca A* (A Search)">
+            <outline text="Função de avaliação f(n)=g(n)+h(n)"/>
+            <outline text="Custo Real do Caminho (g(n))"/>
+            <outline text="Função Heurística (h(n))"/>
+            <outline text="Admissível"/>
+            <outline text="Consistente (Monotônica)"/>
+            <outline text="Por que é importante?"/>
+          </outline>
+        </outline>
+      </outline>
+    </outline>
+    <outline text="4. Algoritmos Genéticos (AGs)">
+      <outline text="Definição e Propósito"/>
+      <outline text="Como Funcionam os Algoritmos Genéticos?">
+        <outline text="1. População Inicial"/>
+        <outline text="2. Função de Aptidão (Fitness Function)"/>
+        <outline text="3. Seleção">
+          <outline text="Seleção por Roleta (Roulette Wheel Selection)"/>
+          <outline text="Seleção por Torneio (Tournament Selection)"/>
+          <outline text="Elitismo"/>
+        </outline>
+        <outline text="4. Cruzamento (Crossover ou Recombinação)">
+          <outline text="Recombinação de um ponto"/>
+          <outline text="Recombinação de dois pontos"/>
+          <outline text="Recombinação uniforme"/>
+        </outline>
+        <outline text="5. Mutação"/>
+        <outline text="6. Nova Geração e Iteração"/>
+      </outline>
+      <outline text="Por que usar Algoritmos Genéticos?"/>
+      <outline text="Aplicações Comuns">
+        <outline text="Otimização"/>
+        <outline text="Machine Learning"/>
+        <outline text="Engenharia"/>
+        <outline text="Bioinformática"/>
+        <outline text="Finanças"/>
+      </outline>
+      <outline text="Conclusão sobre AGs"/>
+      <outline text="Problema do Caixeiro Viajante (PCV) na Prática">
+        <outline text="Representação dos indivíduos"/>
+        <outline text="Função de avaliação"/>
+        <outline text="Mutação"/>
+        <outline text="Recombinação - Ponto de Corte"/>
+      </outline>
+    </outline>
+    <outline text="5. RNA (Redes Neurais Artificiais)">
+      <outline text="Inspiração: O Cérebro Humano e os Neurônios"/>
+      <outline text="Neurônios Artificiais: Os Blocos Construtores das RNAs"/>
+      <outline text="Tipos de Funções de Ativação">
+        <outline text="Função Limiar (threshold)"/>
+        <outline text="Função Sigmoidal Logística (bipolar)"/>
+        <outline text="Função Tangente Hiperbólica"/>
+        <outline text="Função Linear Retificada (ReLU)"/>
+      </outline>
+      <outline text="Arquiteturas das Redes Neurais Artificiais">
+        <outline text="Redes Feedforward (Alimentação para frente)"/>
+        <outline text="Redes Recorrentes"/>
+      </outline>
+      <outline text="Processo de Aprendizagem">
+        <outline text="Aprendizagem Supervisionada"/>
+        <outline text="Aprendizagem Não Supervisionada"/>
+      </outline>
+      <outline text="Vantagens"/>
+      <outline text="Limitações"/>
+      <outline text="Perceptrons: Redes Neurais Simples">
+        <outline text="Limitações"/>
+      </outline>
+      <outline text="Backpropagation: Treinando Redes Multicamadas">
+        <outline text="Limitações"/>
+      </outline>
+      <outline text="Aplicações das Redes Neurais Artificiais"/>
+    </outline>
+    <outline text="6. Sistemas Multiagentes (SMA)">
+      <outline text="Definição e Natureza dos Agentes"/>
+      <outline text="Características Essenciais dos Agentes (4 Propriedades Fundamentais)">
+        <outline text="Autonomia"/>
+        <outline text="Reatividade"/>
+        <outline text="Proatividade"/>
+        <outline text="Habilidade Social"/>
+      </outline>
+      <outline text="Conceito de Racionalidade e Medidas de Desempenho"/>
+      <outline text="SMA como Estratégia de &quot;Dividir e Conquistar&quot;"/>
+      <outline text="Aplicações dos Agentes e SMAs"/>
+      <outline text="Propriedades dos Ambientes">
+        <outline text="Determinístico x Não-Determinístico"/>
+        <outline text="Estático x Dinâmico"/>
+        <outline text="Discreto x Contínuo"/>
+        <outline text="Acessível x Inacessível"/>
+        <outline text="Episódico x Sequencial"/>
+        <outline text="Agente Único x Multiagente"/>
+      </outline>
+      <outline text="Framework PEAS (Performance, Environment, Actuators, Sensors)"/>
+      <outline text="Tipos de Agentes">
+        <outline text="Agentes Reativos Simples"/>
+        <outline text="Agentes Reativos Baseados em Modelos"/>
+        <outline text="Agentes Baseados em Objetivos"/>
+        <outline text="Agentes Baseados na Utilidade"/>
+        <outline text="Agentes com Aprendizagem"/>
+      </outline>
+    </outline>
+  </body>
+</opml>
